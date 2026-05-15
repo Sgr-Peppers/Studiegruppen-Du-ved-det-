@@ -1,0 +1,11 @@
+{
+    "idf.customExtraVars": {},
+    "idf.currentSetup": "C:\\Users\\surin\\Downloads\\Thermal_USB_Camera_PC_Software\\Thermal_USB_Camera_PC_Software\\.espressif\\v5.2.3\\esp-idf",
+    "idf.openOcdConfigs": [
+        "interface/ftdi/esp32_devkitj_v1.cfg",
+        "target/esp32s3.cfg"
+    ],
+    "idf.portWin": "COM8",
+    "idf.flashType": "UART",
+    "idf.monitorPort": "COM8"
+}
