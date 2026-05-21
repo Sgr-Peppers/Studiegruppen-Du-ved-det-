@@ -1,0 +1,4 @@
+hlsAddress: :8887
+paths:
+  cam:
+    runOnDemand: python stream.py
