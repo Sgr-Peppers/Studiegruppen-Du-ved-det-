@@ -4,26 +4,18 @@ Video Feed
 {% endblock %}
 {% block content %}
 
-<video id="video" controls="" autoplay="" src="http://192.168.1.101:8889/cam/" width="800" height="800"></video>
-<!--<video src="http://192.168.50.62:8889/cam/" width="800" height="800"></video>-->
-<!--<script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>-->
-<!-- Or if you want the latest version from the main branch -->
- <script src="https://cdn.jsdelivr.net/npm/hls.js@canary"></script>
+<video id="video" controls="" autoplay="" width="800" height="800"></video>
+<script src="https://cdn.jsdelivr.net/npm/hls.js@1"></script>
+
 <script>
   var video = document.getElementById('video');
-  var videoSrc = 'http://192.168.1.101:8889/cam/';
+  var videoSrc = 'http://192.168.50.62:8887/cam/index.m3u8'; //<- hostname -I 'PI-hostname-ip:8887/cam/index.m3u8' (:8887 HLS port)
   if (Hls.isSupported()) {
     var hls = new Hls();
     hls.loadSource(videoSrc);
     hls.attachMedia(video);
   }
-  // HLS.js is not supported on platforms that do not have Media Source
-  // Extensions (MSE) enabled.
-  //
-  // When the browser has built-in HLS support (check using `canPlayType`),
-  // we can provide an HLS manifest (i.e. .m3u8 URL) directly to the video
-  // element through the `src` property. This is using the built-in support
-  // of the plain video element, without using HLS.js.
+
   else if (video.canPlayType('application/vnd.apple.mpegurl')) {
     video.src = videoSrc;
   }
