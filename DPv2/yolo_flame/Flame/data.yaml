@@ -1,0 +1,13 @@
+train: ../train/images
+val: ../valid/images
+test: ../test/images
+
+nc: 1
+names: ['Fire']
+
+roboflow:
+  workspace: flame-bd9xu
+  project: fire-detection-gvj54
+  version: 5
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/flame-bd9xu/fire-detection-gvj54/dataset/5
